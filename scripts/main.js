@@ -126,28 +126,36 @@ const app = Vue.createApp({
       // list of experience items to loop through it
       experienceItems: [
         {
-          date: '2019',
-          companyName: { en: 'Infusible Coder', ar: 'Infusible Coder' },
-          jobTitle: { en: 'Flutter Developer', ar: 'Flutter Developer' },
+          date: '2018',
+          companyName: { en: 'EBMACS', ar: 'EBMACS' },
+          jobTitle: { en: 'Mobile Application Developer', ar: 'Mobile Application Developer' },
           desc: {
-            en: 'Developed hybrid and native android apps.',
-            ar: 'Developed hybrid and native android apps.'
+            en: 'Developed hybrid and native mobile apps.',
+            ar: 'Developed hybrid and native mobile apps.'
           }
         }, {
-          date: '2021',
-          companyName: { en: 'TenTwenty Pvt Ltd', ar: 'TenTwenty Pvt Ltd' },
-          jobTitle: { en: 'Flutter Developer', ar: 'Flutter Developer' },
+          date: '2019',
+          companyName: { en: 'Innovo Technologies', ar: 'Innovo Technologies' },
+          jobTitle: { en: 'Mobile Application Developer', ar: 'Mobile Application Developer' },
           desc: {
-            en: 'Developed hybrid apps.',
-            ar: 'Developed hybrid apps.'
+            en: 'Developed hybrid and native mobile apps.',
+            ar: 'Developed hybrid and native mobile apps.'
           }
         }, {
           date: '2022',
-          companyName: { en: 'URUK IT SOLUTION', ar: 'URUK IT SOLUTION' },
-          jobTitle: { en: 'Flutter Developer', ar: 'Flutter Developer' },
+          companyName: { en: 'App in Snap', ar: 'App in Snap' },
+          jobTitle: { en: 'Mobile Application Developer', ar: 'Mobile Application Developer' },
           desc: {
-            en: 'Developed hybrid apps.',
-            ar: 'Developed hybrid apps.'
+            en: 'Developed hybrid and native mobile apps.',
+            ar: 'Developed hybrid and native mobile apps.'
+          }
+        }, {
+          date: '2023',
+          companyName: { en: 'Mobilink', ar: 'Mobilink' },
+          jobTitle: { en: 'Mobile Application Developer', ar: 'Mobile Application Developer' },
+          desc: {
+            en: 'Developed hybrid and native mobile apps.',
+            ar: 'Developed hybrid and native mobile apps.'
           }
         },
       ],
@@ -158,33 +166,33 @@ const app = Vue.createApp({
       // list of portfolio items to loop through it
       allPortfolioItems: [
         {
-          url: 'https://play.google.com/store/apps/details?id=com.tentwenty.whocares',
-          imgUrl: 'assets/images/portfolio/whocares.png',
-          title: { en: 'WhoCares!', ar: 'WhoCares!' },
-          desc: { en: '2021', ar: '2021' },
+          url: 'https://apps.apple.com/pk/app/aseel-shopping-center/id6753883828',
+          imgUrl: 'assets/images/portfolio/alaseel.png',
+          title: { en: 'EBMACS', ar: 'EBMACS' },
+          desc: { en: '2018', ar: '2018' },
       
         }, {
-          url: 'https://play.google.com/store/apps/details?id=com.tfmex.shipperapp',
-          imgUrl: 'assets/images/portfolio/tfm.jpg',
-          title: { en: 'TFM Express', ar: 'TFM EXPRESS' },
-          desc: { en: '2022', ar: '2022' },
+          url: 'https://apps.apple.com/pk/app/berain-water-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D9%85%D9%8A%D8%A7%D9%87-%D8%A8%D9%8A%D8%B1%D9%8A%D9%86/id1298014792',
+          imgUrl: 'assets/images/portfolio/berainwater.png',
+          title: { en: 'Innovo Technologies', ar: 'Innovo Technologies' },
+          desc: { en: '2019', ar: '2019' },
         }, {
-          url: 'https://play.google.com/store/apps/details?id=com.berlin.speakeasy',
-          imgUrl: 'assets/images/portfolio/speakeasy.png',
-          title: { en: 'Speak Easy', ar: 'Speak Easy' },
-          desc: { en: '2021', ar: '2021' },
+          url: 'https://apps.apple.com/pk/app/fayha-water-%D9%85%D9%8A%D8%A7%D9%87-%D9%81%D9%8A%D8%AD%D8%A7/id1558892623',
+          imgUrl: 'assets/images/portfolio/fayha.png',
+          title: { en: 'Innovo Technologies', ar: 'Innovo Technologies' },
+          desc: { en: '2022', ar: '2022' },
   
         }, {
-          url: 'https://play.google.com/store/apps/details?id=cat.nippon.dost',
-          imgUrl: 'assets/images/portfolio/nippon.png',
-          title: { en: 'Nippon Dost', ar: 'Nippon Dost' },
-          desc: { en: '2022', ar: '2022' },
+          url: 'https://apps.apple.com/pk/app/zindigi-all-in-one-finance/id1592606621',
+          imgUrl: 'assets/images/portfolio/zindigi.png',
+          title: { en: 'App in Snap', ar: 'App in Snap' },
+          desc: { en: '2023', ar: '2023' },
         },
         {
-          url: '•	https://play.google.com/store/apps/details?id=com.infusiblecoder.multikit.materialuikit',
-          imgUrl: 'assets/images/portfolio/materialkit.png',
-          title: { en: 'Material Kit', ar: 'Material Kit' },
-          desc: { en: '2019', ar: '2019' },
+          url: 'https://apps.apple.com/pk/app/dost-mmbl/id1196694532',
+          imgUrl: 'assets/images/portfolio/dostimag.png',
+          title: { en: 'Mobilink', ar: 'Mobilink' },
+          desc: { en: '2025', ar: '2025' },
         }
       ].reverse(),
 
