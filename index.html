@@ -3,47 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syed Ali - Portfolio</title>
-
-  <!-- CSS -->
+  <title>Syed Ali Raza — Portfolio</title>
   <link rel="stylesheet" href="assets/styles/style.css" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.ico" />
+  <link rel="icon" href="assets/images/profile.png" />
 </head>
 
 <body>
-  <header>
-    <h1>Syed Ali - Mobile App Developer</h1>
+  <header class="hero">
+    <img src="assets/images/profile.png" alt="Syed Ali Raza" class="avatar" />
+    <h1 class="glow-text">Syed Ali Raza</h1>
+    <h2 id="typewriter"></h2>
+    <div class="hero-actions">
+      <a class="btn" href="mailto:alixhah01@gmail.com">Hire Me</a>
+      <a class="btn btn-outline" href="assets/resume.pdf" download>Download Resume</a>
+    </div>
+    <nav class="main-nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section id="about">
+    <section id="about" class="section">
       <h2>About Me</h2>
-      <img src="assets/images/portfolio.jpg" alt="Syed Ali" style="width:200px; border-radius:10px;" />
-      <p>I design and build mobile apps using Flutter and React Native. I focus on clean UI/UX and functional design.</p>
+      <p>I design and build high-quality mobile applications using Flutter and Native iOS. My focus is on clean UI/UX, efficient code, and smooth user experiences that stand the test of time.</p>
     </section>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <p>Some of my best work will appear here soon.</p>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p>Project showcases will appear here. (You can add project cards or links later.)</p>
     </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
+    <section id="contact" class="section">
+      <h2>Contact</h2>
       <p>Email: <a href="mailto:alixhah01@gmail.com">alixhah01@gmail.com</a></p>
-      <p>Phone: <a href="tel:923125256166">+92 312 5256166</a></p>
+      <p>GitHub: <a href="https://github.com/AliXhah" target="_blank" rel="noopener">github.com/AliXhah</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Syed Ali. All rights reserved.</p>
+    <p>© 2025 Syed Ali Raza. All rights reserved.</p>
   </footer>
 
-  <!-- Vue CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.15/dist/vue.global.prod.js"></script>
-
-  <!-- Main Script -->
   <script src="assets/scripts/main.js"></script>
 </body>
 </html>
