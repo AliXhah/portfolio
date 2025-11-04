@@ -91,7 +91,7 @@ const app = Vue.createApp({
         }, {
           imgUrl: 'assets/images/skills/sqlite.jpeg',
           title: 'SQLite'
-        }, 
+        },
       ],
 
       // list of tools items to loop through it
@@ -170,7 +170,7 @@ const app = Vue.createApp({
           imgUrl: 'assets/images/portfolio/alaseel.png',
           title: { en: 'EBMACS', ar: 'EBMACS' },
           desc: { en: '2018', ar: '2018' },
-      
+
         }, {
           url: 'https://apps.apple.com/pk/app/berain-water-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D9%85%D9%8A%D8%A7%D9%87-%D8%A8%D9%8A%D8%B1%D9%8A%D9%86/id1298014792',
           imgUrl: 'assets/images/portfolio/berainwater.png',
@@ -181,7 +181,7 @@ const app = Vue.createApp({
           imgUrl: 'assets/images/portfolio/fayha.png',
           title: { en: 'Innovo Technologies', ar: 'Innovo Technologies' },
           desc: { en: '2022', ar: '2022' },
-  
+
         }, {
           url: 'https://apps.apple.com/pk/app/zindigi-all-in-one-finance/id1592606621',
           imgUrl: 'assets/images/portfolio/zindigi.png',
@@ -385,7 +385,7 @@ const app = Vue.createApp({
     document.querySelectorAll('.has-ultimate-tooltip').forEach(el => {
       Popper.createPopper(el, el.querySelector('.ultimate-tooltip'), {
         placement: 'top',
-        modifiers: [{ name: 'offset', options: { offset: [0, 30] }}]
+        modifiers: [{ name: 'offset', options: { offset: [0, 30] } }]
       });
     });
   },
@@ -416,28 +416,28 @@ const app = Vue.createApp({
     getAppTheme() {
       // get the saved theme from the localStorage
       const storageSavedTheme = localStorage.getItem('nafieSavedTheme');
-    
+
       // Check to see if there a saved theme
       if (storageSavedTheme) {
         this.savedTheme = storageSavedTheme;
-    
+
       } else {
         // So, try to get the browser default theme or make your own default
-    
+
         // Check to see if Media-Queries are supported
         if (window.matchMedia) {
-    
+
           // Check if the dark-mode Media-Query matches
           if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             this.savedTheme = 'dark_theme';
           } else { this.savedTheme = 'light_theme'; }
-    
+
         } else {
           // Default (when Media-Queries are not supported)
           this.savedTheme = appTheme;
         }
       }
-    
+
       // save the new theme in the localStorage
       localStorage.setItem('nafieSavedTheme', this.savedTheme);
     },
@@ -495,7 +495,7 @@ const app = Vue.createApp({
           const visibleFocusableEls = [...nav.querySelectorAll(focusableElementsString)]
             .filter(el => window.getComputedStyle(el).getPropertyValue('visibility') !== 'hidden');
           firstTabStop = visibleFocusableEls[0];
-          lastTabStop = visibleFocusableEls[visibleFocusableEls.length -1];
+          lastTabStop = visibleFocusableEls[visibleFocusableEls.length - 1];
 
           if (e.code === 'Tab') {
             if (e.shiftKey) /* shift + tab */ {
@@ -541,14 +541,14 @@ const app = Vue.createApp({
     // scrolling options
     scrollingOptions() {
       const scrollPosition = window.pageYOffset;
-    
+
       // check for current scroll position to minimize the header
       this.isHeaderBig = (scrollPosition >= this.startMinimizingHeaderAt) ? false : true;
-    
+
       // check for current scroll position to toggle the header
       this.isHeaderHidden = ((scrollPosition > 100) && (scrollPosition > this.lastScrollPosition)) ? true : false;
       this.lastScrollPosition = scrollPosition;
-    
+
       // check for current scroll position to show the scrollTop button
       this.isScrollTopBtnDisplayed = (scrollPosition >= this.startShowingScrollTopBtnAt) ? true : false;
     },
@@ -576,9 +576,9 @@ const app = Vue.createApp({
       if ((this.portfolioItemsPage - 1) * size + size < this.allPortfolioItems.length) {
         this.portfolioItemsPage++;
         const itemsArr = this.allPortfolioItems.slice((this.portfolioItemsPage - 1) * size, this.portfolioItemsPage * size);
-  
+
         this.portfolioItems.push(...itemsArr);
-  
+
         // initialize VanillaTilt for new items
         setTimeout(() => this.portfolioItemsPage > 1 && this.initializeTilt(), 0);
 
@@ -600,10 +600,10 @@ const app = Vue.createApp({
       const contactForm = this.$refs.contactForm;
 
       // form controls
-      const name        = contactForm.querySelector('input[name="name"]');
-      const email       = contactForm.querySelector('input[name="email"]');
-      const phone       = contactForm.querySelector('input[name="phone"]');
-      const message     = contactForm.querySelector('textarea');
+      const name = contactForm.querySelector('input[name="name"]');
+      const email = contactForm.querySelector('input[name="email"]');
+      const phone = contactForm.querySelector('input[name="phone"]');
+      const message = contactForm.querySelector('textarea');
 
       // form validation status
       let errors = {
@@ -758,38 +758,42 @@ const app = Vue.createApp({
       const url = form.getAttribute('action');
       const formData = new FormData(form);
 
-      // start loading spinner
       this.startLoading();
 
-      // send post request
-      fetch(url, { method: 'POST', body: formData })
-        .then(res => res.text())
-        .then(data => {
-          if (data === 'success') {
-            // show success message
-            this.setNotify({ className: 'success', msg: form.getAttribute('data-success-msg'), time: 5000 });
-
-            // reset all form inputs
+      fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
+            this.setNotify({
+              className: 'success',
+              msg: form.getAttribute('data-success-msg'),
+              time: 5000
+            });
             form.reset();
-
-            // remove inputs valid classes
             form.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
-
-          } else if (data === 'error') {
-            // show error message
-            this.setNotify({ className: 'danger', msg: form.getAttribute('data-err-msg'), time: 5000 });
+          } else {
+            this.setNotify({
+              className: 'danger',
+              msg: form.getAttribute('data-err-msg'),
+              time: 5000
+            });
           }
-
-          // end loading spinner
           this.endLoading();
-
-          console.log(data);
+          return response.text();
         })
-        .catch(err => console.log(err));
+        .then(console.log)
+        .catch(error => {
+          this.setNotify({ className: 'danger', msg: 'Network error', time: 5000 });
+          this.endLoading();
+          console.error(error);
+        });
     },
 
     // show messages by toast notifications
-    setNotify({id, className, msg, time}) {
+    setNotify({ id, className, msg, time }) {
       const notify = {
         id: id || `${Date.now()}${this.notifications.length}`,
         className,
